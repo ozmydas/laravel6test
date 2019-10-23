@@ -35,3 +35,8 @@ Route::post('user/create', 'UserController@store')->name('user.store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// form validation ajax
+Route::get('user/ajaxcreate', 'UserController@ajaxcreate')->name('user.ajaxcreate');
+Route::post('user/ajaxcreate', 'UserController@ajaxstore')->name('user.ajaxstore');

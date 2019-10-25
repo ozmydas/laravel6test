@@ -34,6 +34,8 @@ Route::post('user/create', 'UserController@store')->name('user.store');
 
 Auth::routes();
 
+Route::get('admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard')->middleware('admin');
+Route::get('member/dashboard', 'MemberController@dashboard')->name('member.dashboard')->middleware('member');
 Route::get('/home', 'HomeController@index')->name('home');
 
 

@@ -32,11 +32,12 @@ Route::get('autocomplete', 'SearchController@autocomplete')->name('autocomplete'
 Route::get('user/create', 'UserController@create')->name('user.create');
 Route::post('user/create', 'UserController@store')->name('user.store');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard')->middleware('admin');
-Route::get('member/dashboard', 'MemberController@dashboard')->name('member.dashboard')->middleware('member');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('member/dashboard', 'MemberController@dashboard')->name('member.dashboard')->middleware(['member', 'verified']);
+Route::get('home', 'HomeController@index')->name('home');
+Route::get('registered', 'HomeController@registered')->name('registered')->middleware('verify');
 
 
 // form validation ajax

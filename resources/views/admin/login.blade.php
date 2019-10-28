@@ -97,9 +97,14 @@
         <div class="ui fluid large teal submit button">Login</div>
     </div>
 
-    <div class="ui error message"></div>
-
 </form>
+
+
+@if ($message = Session::get('error'))
+  <div class="ui error message">
+    {{ $message }}
+  </div>
+@endif
 
 <div class="ui message">
   New to us? <a href="#">Sign Up</a>

@@ -25,4 +25,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    /******/
+
+    public function registered(){
+        return view('registered');
+    } // end func
 }

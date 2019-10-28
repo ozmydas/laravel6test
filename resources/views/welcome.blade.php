@@ -12,8 +12,10 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #FF2D20;
+                background: -webkit-linear-gradient(to right, #ef473a, #FF2D20);
+                background: linear-gradient(to right, #ef473a, #FF2D20);
+                color: #fff;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -49,7 +51,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: gold;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -58,12 +60,42 @@
                 text-transform: uppercase;
             }
 
+            .links.menu > a{
+                text-shadow: 1px 1px 3px rgba(50,50,50,0.6);
+            }
+
+            .top-right > a {
+                background: #dc2424;
+                padding: 5px 20px;
+                border-radius: 10px;
+                color: #fff;
+                box-shadow: 1px 1px 3px rgba(50,50,50,0.4)
+            }
+
+            .top-right > a:hover{
+                background: #e42424;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
+            }
+
+            .backbackground{
+                height: 100vh;
+                width: 100vw;
+                background: url('{{ asset('assets/img/laravelinverted.png') }}') no-repeat bottom left;
+                background-size: contain;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0.1;
             }
         </style>
     </head>
     <body>
+        <div class="backbackground">
+            
+        </div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -81,10 +113,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel {{ versi() }}
                 </div>
 
-                <div class="links">
+                <div class="links menu">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>

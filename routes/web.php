@@ -43,3 +43,7 @@ Route::get('registered', 'HomeController@registered')->name('registered')->middl
 // form validation ajax
 Route::get('user/ajaxcreate', 'UserController@ajaxcreate')->name('user.ajaxcreate');
 Route::post('user/ajaxcreate', 'UserController@ajaxstore')->name('user.ajaxstore');
+
+// exelation
+Route::get('excel', 'ExcelController@index')->name('excel.index');
+Route::post('excel', 'ExcelController@store')->name('excel.store');
